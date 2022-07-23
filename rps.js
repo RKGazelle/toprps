@@ -1,9 +1,3 @@
-const playerChoice = "PAPER";
-const computerChoice = getComputerChoice();
-
-console.log(playRound(playerChoice, computerChoice));
-
-
 function getComputerChoice() {
   let plays = ["Rock", "Paper", "Scissors"];
   let compChoice = plays[Math.floor(Math.random() * plays.length)];
@@ -38,4 +32,38 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
+}
+
+function game() {
+  
+  let playerScore = 0;
+  let compScore = 0;
+
+  for (i=0; i < 5; i++) {
+    playerInput = prompt("Input your play:")
+    result = playRound(playerInput.toLowerCase(), getComputerChoice());
+    switch (result) {
+      case "You win!":
+        playerScore += 1;
+        console.log(`You won! Your score is now ${playerScore}`)
+        break;
+      case "You lose!":
+        compScore += 1;
+        console.log(`You lost! Computer score is now ${compScore}`)
+        break
+      case "It's a tie!":
+        console.log("It's a tie- no score change.")
+        break
+    }
+  }
+
+  if (playerScore > compScore) {
+    console.log(`You win! Player Score: ${playerScore} | Computer Score: ${compScore}`);
+  } else if (playerScore == compScore) {
+    console.log(`It's a tie! Player Score: ${playerScore} | Computer Score: ${compScore}`)
+  } else {
+    console.log(`You lost... Player Score: ${playerScore} | Computer Score: ${compScore}`);
+  }
+
+  return playerScore;
 }
