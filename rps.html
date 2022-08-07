@@ -5,13 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="rps.css"></link>
 </head>
-<body>
-  <script src = "rps.js"></script>
+<body id="body">
+  <script src = "rps.js" defer></script>
   <h1>Rock, Paper, Scissors</h1>
-  <p>Open up your console to get started!</p>
-  <p>Type game() and press Enter to begin.</p>
-  <p>Each game lasts 5 rounds. You win if you score 3 or higher!</p>
-  <p>Good luck...</p>
+  <p>Click the corresponding button to make your selection.</p>
+  <button id="rock">Rock</button>
+  <button id="paper">Paper</button>
+  <button id="scissors">Scissors</button>
+  <div id="results">Current Score - Player 0 | Computer 0</div>
 </body>
 </html>

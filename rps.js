@@ -1,3 +1,24 @@
+const rockButton = document.querySelector('#rock');
+const scissorsButton = document.querySelector('#scissors');
+const paperButton = document.querySelector('#paper');
+const resultsDiv = document.querySelector('#results');
+let playerScore = 0;
+let compScore = 0;
+let result = "";
+
+rockButton.addEventListener('click', function() {
+  result = playRound("rock",getComputerChoice());
+  resultsDiv.textContent = `${result} Current Score - Player ${playerScore} | Computer ${compScore}`;
+});
+paperButton.addEventListener('click', function() {
+  result = playRound("paper",getComputerChoice());
+  resultsDiv.textContent = `${result} Current Score - Player ${playerScore} | Computer ${compScore}`;
+});
+scissorsButton.addEventListener('click', function() {
+  result = playRound("scissors",getComputerChoice());
+  resultsDiv.textContent = `${result} Current Score - Player ${playerScore} | Computer ${compScore}`;
+});
+
 function getComputerChoice() {
   let plays = ["Rock", "Paper", "Scissors"];
   let compChoice = plays[Math.floor(Math.random() * plays.length)];
@@ -10,22 +31,28 @@ function playRound(playerSelection, computerSelection) {
     if (computerSelection.toLowerCase() == "rock") {
       return "It's a tie!";
     } else if (computerSelection.toLowerCase() == "paper") {
+      compScore+=1;
       return "You lose!";
     } else if (computerSelection.toLowerCase() == "scissors") {
+      playerScore += 1;
       return "You win!";
     }
   } else if (playerSelection.toLowerCase() == "paper") {
     if (computerSelection.toLowerCase() == "rock") {
+      playerScore += 1;
       return "You win!";
     } else if (computerSelection.toLowerCase() == "paper") {
       return "It's a tie!";
     } else if (computerSelection.toLowerCase() == "scissors") {
+      compScore += 1;
       return "You lose!";
     }
   } else { // Player selection is scissors
     if (computerSelection.toLowerCase() == "rock") {
+      compScore += 1;
       return "You lose!";
     } else if (computerSelection.toLowerCase() == "paper") {
+      playerScore += 1;
       return "You win!";
     } else if (computerSelection.toLowerCase() == "scissors") {
       return "It's a tie!";
@@ -67,3 +94,4 @@ function game() {
 
   return playerScore;
 }
+
