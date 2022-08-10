@@ -1,7 +1,69 @@
-div {
+h1 {
+  border-bottom: 2px solid darkred;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: darkred;
+  padding: 10px;
+}
+
+p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+#mainCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  height: 750px;
+}
+
+#results {
   padding: 20px;
-  background-color: black;
+  background-color: gray;
   color: white;
   font-size: 20px;
   text-align: center;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  max-width: 1000px;
+  max-height: 200px;
+  padding: 20px;
+  margin: 20px;
+}
+
+button {
+  color: white;
+  border: 5px solid black;
+  text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 700;
+  width: 100px;
+  padding: 20px;
+}
+
+#rock {
+  background-color: brown;
+}
+
+#paper {
+  background-color: burlywood;
+}
+
+#scissors {
+  background-color: slategray;
+}
+
+#rock:active,
+#paper:active,
+#scissors:active {
+  background-color: white;
+  color: black;
+  transform: translateY(4px) translateX(4px);
 }
