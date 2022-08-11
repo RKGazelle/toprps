@@ -3,7 +3,7 @@ const buttonBox = document.querySelector('.buttonBox');
 const startButton = document.querySelector('#start');
 const resetButton = document.querySelector('#reset');
 const resultsDiv = document.querySelector('#results');
-const introP = document.querySelector('.intro');
+const introP = document.querySelector('#intro');
 const rockButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
 const paperButton = document.createElement('button');
@@ -14,6 +14,7 @@ scissorsButton.setAttribute('id', 'scissors');
 scissorsButton.textContent = "Scissors";
 paperButton.setAttribute('id', 'paper');
 paperButton.textContent = "Paper";
+introP.textContent = "Can you defeat the computer?   First to 5 points wins!";
 
 let playerScore = 0;
 let compScore = 0;
@@ -103,15 +104,12 @@ function initGame() {
   buttonBox.append(rockButton, paperButton, scissorsButton);
   resultsDiv.style.cssText = 'background: gray; color: white; padding: 20px; font-size: 20px; text-align: center;'
 
-  introP.textContent = `W: ${wins} L: ${losses}`;
-
   if(outcome === 1) {
     wins++;
   } else if (outcome === 2) {
     losses++;
   } 
-
-
+  
 
   return;
 }
